@@ -3,7 +3,6 @@ package org.ingram.color.entity;
 import java.util.regex.Pattern;
 
 
-import org.apache.commons.lang3.StringUtils;
 import org.ingram.color.web.ColorValidationException;
 
 public class ColorEntity {
