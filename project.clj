@@ -18,6 +18,7 @@
                  ]
   :plugins [[lein-junit "1.1.8"]]
   :junit ["test/java"]
+   lein-release {:deploy-via :clojars}
   )
 
 
