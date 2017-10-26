@@ -1,7 +1,5 @@
 package org.ingram.color.space;
 
-import org.apache.commons.lang3.StringUtils;
-import org.ingram.color.Color;
 
 
 public abstract class ColorSpace {
@@ -13,17 +11,4 @@ public abstract class ColorSpace {
 		newSpace.fromXyz(toXyz());
 	}
 	
-	public static ColorSpace fromName(String name){
-		ColorSpace space = null;
-		
-		if(!StringUtils.isBlank(name)){
-			Color color = Color.fetchByName(name);
-		
-			if(color != null){
-				space = color.getColorSpace();
-			}
-		}
-		
-		return space;
-	}
 }

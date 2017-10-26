@@ -2,7 +2,6 @@ package org.ingram.color.util;
 
 import java.util.ArrayList;
 
-import org.hibernate.Session;
 import org.ingram.color.Color;
 import org.ingram.color.entity.ColorEntity;
 import org.ingram.color.entity.ColorListEntity;
@@ -10,27 +9,7 @@ import org.ingram.color.space.RgbColorSpace;
 
 public class ColorListGenerator {
 	
-	public static final void seedCrayolaList(){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		try{
-			session.beginTransaction();
-		
-			ColorListEntity list1 = (ColorListEntity)session.createQuery(
-					"from ColorListEntity where id = ?")
-					.setInteger(0, 1).uniqueResult();
-		
-			if(list1 == null){
-				//No color lists exist. Generate a default Crayola list.
-				ColorListEntity crayolas = generateCrayolaList();
-				session.save(crayolas);
-			}
-		
-			session.getTransaction().commit();
-		}finally{
-			session.close();
-		}
-	}
-	
+
 	private static final ColorListEntity generateCrayolaList(){
 		
 		ColorListEntity crayolaList = new ColorListEntity("Crayola");

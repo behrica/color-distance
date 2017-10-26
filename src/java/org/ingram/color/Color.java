@@ -28,19 +28,9 @@ public class Color extends ColorEntity{
 		return new XyzColorSpace(getX(), getY(), getZ());
 	}
 	
-	@Override
-	public void save(){
-		new ColorEntity(this).save();
-	}
-	
-	public static Color fetchByName(String name){
-		return fetchFromEntity(ColorEntity.fetchByName(name));
-	}
-	
-	public static Color fetchById(int id){
-		return fetchFromEntity(ColorEntity.fetchById(id));
-	}
-	
+
+
+
 	private static Color fetchFromEntity(ColorEntity entity){
 		Color color = null;
 		
